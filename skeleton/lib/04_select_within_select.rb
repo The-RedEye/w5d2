@@ -120,11 +120,43 @@ def population_constraint
   SQL
 end
 
+# all countries population < 25m  --->continents where all of these countries are true -> all these countries
+
 def sparse_continents
   # Find every country that belongs to a continent where each country's
   # population is less than 25,000,000. Show name, continent and
   # population.
   # Hint: Sometimes rewording the problem can help you see the solution.
   execute(<<-SQL)
+    SE
+    
+     /* WITH countries_less_25m AS (
+        SELECT
+          name
+        FROM
+          countries
+        WHERE
+          population < 25000000
+        )*/
+
+    SELECT 
+      continent
+    FROM
+      countries
+    Where
+      (SELECT COUNT(countries)
+      FROM 
+        countries
+      WHERE 
+        population < 25000000
+        ) = (SELECT COUNT(countries)
+            FROM
+              countries
+            WHERE
+              /* */
+              )
+
+      
+
   SQL
 end
