@@ -131,7 +131,7 @@ def sparse_continents
     /*  need all the continents where EVERY country in that continent has a pop < 25 m
             list of all contries wiht pop < 25 mil grouped by continent
             count the number of countries in this list
-            count the number of countries in each continent
+            count the number of coasdfuntries in each continent
             compare the two counts
             filter the continents where the counts are equal using HAVING 
     */
